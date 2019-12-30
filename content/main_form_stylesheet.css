@@ -71,6 +71,7 @@
     flex-direction: column;
     background-color: #03000B;
     background-image: url(../Pictures/space.png);
+    background-repeat: repeat;
     background-size: 100%;
     height: 28em;
     background-position-y: calc(var(--scroll)*0.03em), 0;
