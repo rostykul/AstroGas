@@ -141,10 +141,3 @@ html, body {
     font-family: inherit;
     font-size: 120%;
 }
-
-/*mobile scroll fix?*/
-@media screen and (max-width: @screen-sm-max) {
-    html, body {
-        overflow: auto !important;
-    }
-}
