@@ -23,46 +23,62 @@
             margin-top: calc((var(--navheight) - 23px)*0.5);
         }
 
+        #nav_bar .lang_select {
+            float: right;
+            background-color: lightgray;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            height: 25px;
+            border: 5px solid #fff;
+            width: 40px;
+            margin: calc((var(--navheight) - 25px)*0.5 - 5px) calc((var(--navheight) - 25px)*0.5) 0 0;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: all 0.1s ease;
+        }
+            #nav_bar .lang_select:hover {
+                width: 85px;
+                border-color: #D8D8D8;
+            }
+
         #nav_bar .lang_button {
-            float: right;
-            display: block;
-            height: 1.3em;
-            margin: calc((var(--navheight) - 1.3em)*0.5);
+            height: 25px;
+            flex-basis: 40px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin: 0;
             border-radius: 4px;
-        }
-
-        #nav_bar .login_button {
-            float: right;
-            display: block;
-            font-size: 23px;
-            background-color: #00E152;
-            padding: calc((var(--navheight) - 23px)*0.5);
-            padding-left: 2em;
-            padding-right: 2em;
-            text-align: center;
-            text-transform: uppercase;
-            transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
-            user-select: none;
-        }
-
-            #nav_bar .login_button:hover {
-                cursor: pointer;
-                background-color: #00A539;
-                color: #fff;
-                padding-left: 2.75em;
-                padding-right: 2.75em;
-            }
-            #nav_bar .login_button:active {
-                cursor: pointer;
-                background-color: #00A539;
-                color: #fff;
-                padding-left: 2.5em;
-                padding-right: 2.5em;
-            }
-
-        #nav_bar .lang_button:hover {
             cursor: pointer;
         }
+
+#nav_bar .login_button {
+    float: right;
+    display: block;
+    font-size: 23px;
+    background-color: #00E152;
+    padding: calc((var(--navheight) - 23px)*0.5);
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
+    user-select: none;
+    cursor: pointer;
+}
+
+#nav_bar .login_button:hover {
+    background-color: #00A539;
+    color: #fff;
+    padding-left: 2.75em;
+    padding-right: 2.75em;
+}
+#nav_bar .login_button:active {
+    background-color: #00A539;
+    color: #fff;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
 
 #star_back {
     display: flex;
@@ -95,8 +111,16 @@
     height: 0.15em;
     margin: 0.8em;
     width: 25vw;
+    animation: start_up 0.5s ease;
 }
-
+@keyframes start_up{
+    0% {
+        width: 18vw;
+    }
+    100% {
+        width: 25vw;
+    }
+}
 #content:before {
     content: "";
     background-color: #fff;
@@ -128,7 +152,8 @@
 }
 
 html, body {
-    overflow-x: hidden
+    overflow-x: hidden;
+    flex: auto;
 }
 
 #sample {
