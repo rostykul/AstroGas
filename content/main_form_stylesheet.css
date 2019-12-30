@@ -74,7 +74,7 @@
     background-repeat: repeat;
     background-size: 100%;
     height: 28em;
-    background-position-y: calc(var(--scroll)*0.03em), 0;
+    background-position-y: calc(var(--scroll)*0.5*1px), 0;
 }
 
 #star_back h1{
