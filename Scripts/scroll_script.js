@@ -1,4 +1,4 @@
-let scroll_el = document.getElementById("scrolling");
+var scroll_el = document.getElementById("scrolling");
 
 window.addEventListener("scroll", () => {
     scroll_el.style.setProperty("--scroll", window.pageYOffset);

@@ -35,7 +35,7 @@
             float: right;
             display: block;
             font-size: 23px;
-            background-color: #00FF39;
+            background-color: #00E152;
             padding: calc((var(--navheight) - 23px)*0.5);
             padding-left: 2em;
             padding-right: 2em;
@@ -140,4 +140,11 @@ html, body {
 .capital{
     font-family: inherit;
     font-size: 120%;
+}
+
+/*mobile scroll fix?*/
+@media screen and (max-width: @screen-sm-max) {
+    html, body {
+        overflow: auto !important;
+    }
 }
