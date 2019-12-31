@@ -1,7 +1,8 @@
-    *{
-        margin:0;
-        font-family: Arial, sans-serif;
-    }
+* {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+}
     #nav_bar {
         background-color: #fff;
         --navheight: 84px;
@@ -25,7 +26,7 @@
 
         #nav_bar .lang_select {
             float: right;
-            background-color: lightgray;
+            background-color: white;
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
@@ -39,6 +40,7 @@
         }
             #nav_bar .lang_select:hover {
                 width: 85px;
+                background-color: #D8D8D8;
                 border-color: #D8D8D8;
                 /*comments*/
             }
@@ -90,21 +92,21 @@
     background-image: url(../Pictures/space.png);
     background-repeat: repeat;
     background-size: 100%;
-    height: 28em;
+    height: 448px;
     background-position-y: calc(var(--scroll)*0.5*1px), 0px;
 }
 
-#star_back h1{
-    color: #fff;
-    font-family: Arial Black;
-    text-align: center;
-    font-size: 3em;
-}
+    #star_back h1 {
+        color: #fff;
+        font-family: Arial Black;
+        text-align: center;
+        font-size: 48px;
+    }
 
 #star_back p{
     color: #fff;
     text-align: center;
-    font-size: 2.25em;
+    font-size: 36px;
 }
 
 #star_back div{
@@ -149,7 +151,8 @@
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    height: 100em;
+    padding: 30px 50px 50px 50px;
+    height: auto;
 }
 
 html, body {
@@ -158,12 +161,56 @@ html, body {
 }
 
 #sample {
+    background-color: #fff;
+    border-radius: 10px;
     background-color: lightgray;
-    width: 94%;
-    height: 90%;
+    box-shadow: gray 0px 0px 25px, white 0px 0px 125px inset;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .capital{
     font-family: inherit;
     font-size: 120%;
 }
+
+form{
+    display: table;
+}
+
+.in_row{
+    display: table-row;
+}
+input[type= "text"] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 3px gray;
+    color: black;
+    outline: none;
+    transition: all 0.1s ease;
+}
+
+input[type= "text"]::placeholder{
+    color: transparent;
+    transition: all 0.1s ease;
+}
+
+label[for="location"] {
+    transform: translateY(-33px);
+    color: gray;
+    transition: all 0.1s ease;
+}
+
+input[id="location"]:focus + label[for="location"], input[id="location"]:not(:placeholder-shown) + label[for="location"] {
+    transform: translateY(-65px);
+}
+
+input[id="location"]:focus, input[id="location"]:not(:placeholder-shown) {
+    border-color: black;
+}
+    input[id="location"]:focus::placeholder, input[id="location"]:not(:placeholder-shown)::placeholder {
+        color: gray;
+    }
