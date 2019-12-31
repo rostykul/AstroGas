@@ -1,120 +1,94 @@
+
+
 * {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     font-size: 23px;
 }
+    #nav_bar {
+        background-color: #fff;
+        --navheight: 90px;
+        height: var(--navheight);
+        overflow: hidden;
+    }
 
-#nav_bar {
-    background-color: #fff;
-    --navheight: 84px;
-    height: var(--navheight);
-    overflow: hidden;
+        #nav_bar img {
+            float: left;
+            height: 50px;
+            margin: calc((var(--navheight) - 50px)*0.5);
+            margin-left: 25px;
+        }
+
+        #nav_bar .astro_title {
+            float: left;
+            display: block;
+            font-size: 23px;
+            margin-top: calc((var(--navheight) - 23px)*0.5);
+        }
+
+        #nav_bar .lang_select {
+            float: right;
+            background-color: white;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            height: 25px;
+            border: 5px solid #fff;
+            width: 40px;
+            margin: calc((var(--navheight) - 25px)*0.5 - 5px) calc((var(--navheight) - 25px)*0.5) 0 0;
+            border-radius: 7px;
+            overflow: hidden;
+            transition: all 0.1s ease;
+        }
+            #nav_bar .lang_select:hover {
+                width: 85px;
+                background-color: #D8D8D8;
+                border-color: #D8D8D8;
+                /*comments*/
+            }
+
+        #nav_bar .lang_button {
+            height: 25px;
+            flex-basis: 40px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            margin: 0;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+#nav_bar .login_button {
+    float: right;
+    display: block;
+    font-weight: bold;
+    font-size: 23px;
+    background-color: #00E152;
+    padding: calc((var(--navheight) - 23px)*0.5);
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
+    user-select: none;
+    cursor: pointer;
 }
 
-    #nav_bar img {
-        float: left;
-        height: 50px;
-        margin: calc((var(--navheight) - 50px)*0.5);
-        margin-left: 25px;
-    }
-
-    #nav_bar .astro_title {
-        float: left;
-        display: block;
-        font-size: 23px;
-        margin-top: calc((var(--navheight) - 23px)*0.5);
-    }
-
-    #nav_bar .lang_select {
-        float: right;
-        background-color: white;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-        flex-direction: row-reverse;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        height: 25px;
-        border: 5px solid #fff;
-        width: 40px;
-        margin: calc((var(--navheight) - 25px)*0.5 - 5px) calc((var(--navheight) - 25px)*0.5) 0 0;
-        border-radius: 7px;
-        overflow: hidden;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-        #nav_bar .lang_select:hover {
-            width: 85px;
-            background-color: #D8D8D8;
-            border-color: #D8D8D8;
-            /*comments*/
-        }
-
-    #nav_bar .lang_button {
-        height: 25px;
-        -ms-flex-preferred-size: 40px;
-        flex-basis: 40px;
-        -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-        flex-grow: 0;
-        -ms-flex-negative: 0;
-        flex-shrink: 0;
-        margin: 0;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    #nav_bar .login_button {
-        float: right;
-        display: block;
-        font-size: 23px;
-        background-color: #00E152;
-        padding: calc((var(--navheight) - 23px)*0.5);
-        padding-left: 2em;
-        padding-right: 2em;
-        text-align: center;
-        text-transform: uppercase;
-        -webkit-transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
-        transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: pointer;
-    }
-
-        #nav_bar .login_button:hover {
-            background-color: #00A539;
-            color: #fff;
-            padding-left: 2.75em;
-            padding-right: 2.75em;
-        }
-
-        #nav_bar .login_button:active {
-            background-color: #00A539;
-            color: #fff;
-            padding-left: 2.5em;
-            padding-right: 2.5em;
-        }
+#nav_bar .login_button:hover {
+    background-color: #00A539;
+    color: #fff;
+    padding-left: 2.25em;
+    padding-right: 2.25em;
+}
+#nav_bar .login_button:active {
+    background-color: #00A539;
+    color: #fff;
+    padding-left: 1.9em;
+    padding-right: 1.9em;
+}
 
 #star_back {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
     background-color: #03000B;
     background-image: url(../Pictures/space.png);
@@ -131,59 +105,42 @@
         font-size: 48px;
     }
 
-    #star_back p {
-        color: #fff;
-        text-align: center;
-        font-size: 36px;
-    }
+#star_back p{
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+}
 
-    #star_back div {
-        background-color: #fff;
-        height: 0.15em;
-        margin: 0.8em;
-        width: 25vw;
-        -webkit-animation: start_up 0.5s ease;
-        animation: start_up 0.5s ease;
-    }
-
-@-webkit-keyframes start_up {
+#star_back div{
+    background: radial-gradient(#fff, rgba(255,255,255,0) 75%);
+    height: 0.15em;
+    margin: 0.8em;
+    width: 32vw;
+    animation: start_up 0.5s ease;
+}
+@keyframes start_up{
     0% {
         width: 18vw;
     }
-
     100% {
-        width: 25vw;
+        width: 32vw;
     }
 }
-
-@keyframes start_up {
-    0% {
-        width: 18vw;
-    }
-
-    100% {
-        width: 25vw;
-    }
-}
-
 #content:before {
     content: "";
     background-color: #fff;
     height: 2em;
     width: 100vw;
-    -webkit-transform: translateX(calc(50vw - 0.5em)) skew(-45deg);
     transform: translateX(calc(50vw - 0.5em)) skew(-45deg);
     position: absolute;
     top: -1.9em;
     left: 0;
 }
-
 #content:after {
     content: "";
     background-color: #fff;
     height: 2em;
     width: 100vw;
-    -webkit-transform: translateX(calc(-50vw + 0.5em)) skew(45deg);
     transform: translateX(calc(-50vw + 0.5em)) skew(45deg);
     position: absolute;
     top: -1.9em;
@@ -192,14 +149,8 @@
 
 #content {
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     background-color: #fff;
     padding: 30px 50px 50px 50px;
@@ -208,8 +159,6 @@
 
 html, body {
     overflow-x: hidden;
-    -webkit-box-flex: 1;
-    -ms-flex: auto;
     flex: auto;
 }
 
@@ -220,30 +169,24 @@ html, body {
     box-shadow: gray 0px 0px 25px, white 0px 0px 125px inset;
     width: 100%;
     height: 600px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.capital {
+.capital{
     font-family: inherit;
     font-size: 120%;
 }
 
-form {
+form{
     display: table;
 }
 
-.in_row {
+.in_row{
     display: table-row;
 }
-
 input[type= "text"] {
     background-color: transparent;
     border: 0;
@@ -252,63 +195,33 @@ input[type= "text"] {
     outline: none;
     width: 60vw;
     max-width: 350px;
-    -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
 }
 
-    input[type= "text"]::-webkit-input-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]::-moz-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]:-ms-input-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]::placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
+input[type= "text"]::placeholder{
+    color: transparent;
+    transition: all 0.1s ease;
+}
 
 label[for="location"] {
-    -webkit-transform: translateY(-33px);
     transform: translateY(-33px);
     color: gray;
-    -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
 }
 
 input[id="location"]:focus + label[for="location"], input[id="location"]:not(:placeholder-shown) + label[for="location"] {
-    -webkit-transform: translateY(-65px);
     transform: translateY(-65px);
 }
 
 input[id="location"]:focus, input[id="location"]:not(:placeholder-shown) {
     border-color: black;
 }
+input[id="location"]:focus::placeholder, input[id="location"]:not(:placeholder-shown)::placeholder {
+    color: gray;
+}
 
-    input[id="location"]:focus::-webkit-input-placeholder, input[id="location"]:not(:placeholder-shown)::-webkit-input-placeholder {
-        color: gray;
+@media (max-width: 720px) {
+    #nav_bar {
+        --navheight: 70px;
     }
-
-    input[id="location"]:focus::-moz-placeholder, input[id="location"]:not(:placeholder-shown)::-moz-placeholder {
-        color: gray;
-    }
-
-    input[id="location"]:focus:-ms-input-placeholder, input[id="location"]:not(:placeholder-shown):-ms-input-placeholder {
-        color: gray;
-    }
-
-    input[id="location"]:focus::placeholder, input[id="location"]:not(:placeholder-shown)::placeholder {
-        color: gray;
-    }
+}
