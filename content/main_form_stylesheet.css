@@ -250,33 +250,11 @@ input[type= "text"] {
     border-bottom: solid 3px gray;
     color: black;
     outline: none;
+    width: 60vw;
+    max-width: 350px;
     -webkit-transition: all 0.1s ease;
     transition: all 0.1s ease;
 }
-
-    input[type= "text"]::-webkit-input-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]::-moz-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]:-ms-input-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
-
-    input[type= "text"]::-ms-input-placeholder {
-        color: transparent;
-        -webkit-transition: all 0.1s ease;
-        transition: all 0.1s ease;
-    }
 
     input[type= "text"]::-webkit-input-placeholder {
         color: transparent;
@@ -318,22 +296,6 @@ input[id="location"]:focus + label[for="location"], input[id="location"]:not(:pl
 input[id="location"]:focus, input[id="location"]:not(:placeholder-shown) {
     border-color: black;
 }
-
-    input[id="location"]:focus::-webkit-input-placeholder, input[id="location"]:not(:placeholder-shown)::-webkit-input-placeholder {
-        color: gray;
-    }
-
-    input[id="location"]:focus::-moz-placeholder, input[id="location"]:not(:placeholder-shown)::-moz-placeholder {
-        color: gray;
-    }
-
-    input[id="location"]:focus:-ms-input-placeholder, input[id="location"]:not(:placeholder-shown):-ms-input-placeholder {
-        color: gray;
-    }
-
-    input[id="location"]:focus::-ms-input-placeholder, input[id="location"]:not(:placeholder-shown)::-ms-input-placeholder {
-        color: gray;
-    }
 
     input[id="location"]:focus::-webkit-input-placeholder, input[id="location"]:not(:placeholder-shown)::-webkit-input-placeholder {
         color: gray;
