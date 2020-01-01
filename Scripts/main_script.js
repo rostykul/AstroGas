@@ -12,7 +12,7 @@ function mod(n, m) {
 }
 $(document).ready(function () {
     var autocomplete;
-    autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')), {
+    autocomplete = new window.google.maps.places.Autocomplete((document.getElementById('location')), {
         types: ['geocode']
     });
 
