@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="content/main_form_stylesheet.css" />
     <link rel="icon" type="image/x-icon" href="Pictures/AstroGasIcon.png" />
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--Navigation Bar-->
     <div id="nav_bar">
         <div class="login_button">Log in</div>
         <div class="lang_select">
@@ -19,19 +21,31 @@
         <p class="astro_title">astrogas.info</p>
 
     </div>
+
+    <!--Title & Background-->
     <div id="star_back">
         <h1><span class="capital">C</span>OMPUTING <span class="capital">A</span>SSISTANT</h1>
         <div></div>
         <p>Data Calculations</p>
     </div>
+
+    <!--Main Content-->
     <div id="content">
         <div id="sample">
-            <form action="" method="">
-                <input type="text" id="location" class="in_row" placeholder="eg(43.7000,-79.4200)" pattern=".*\S.*">
+            <form action="" method="" onSubmit="return false;">
+                <input type="text" id="location" class="in_row" placeholder=" " pattern=".*\S.*">
                 <label for="location" class="in_row">Location</label>
+                <div class="in_row">latitude: <span id="latitude_view"></span> <br/>longitude:<span id="longitude_view"></span></div>
             </form>
         </div>
     </div>
-    <script src="Scripts/scroll_script.js"></script>
+
+    <!--Footer-->
+    <div id="footer"><a href="http://santem.ru/" target="_blank">New Astrology - Santem University</a></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDaODl8QakYDaimTqwpqZbLf-ZiAA225_k"
+            type="text/javascript"></script>
+    <script src="Scripts/main_script.js" type="text/javascript"></script>
 </body>
 </html>
