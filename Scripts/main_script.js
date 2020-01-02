@@ -15,6 +15,7 @@ $(document).ready(function () {
     var autocomplete = new google.maps.places.Autocomplete(pac_input, {
         types: ['geocode']
     });
+    enableEnterKey(pac_input);
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var near_place = autocomplete.getPlace();
@@ -27,11 +28,12 @@ $(document).ready(function () {
         alert("Local Time: " + local_hours + ":" + local_mins);
     });
 
-    (function pacSelectFirst(input) {
-        // store the original event binding function
-        var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+    function enableEnterKey(input) {
 
-        function addEventListenerWrapper(type, listener) {
+        /* Store original event listener */
+        const _addEventListener = input.addEventListener;
+
+        const addEventListenerWrapper = (type, listener) => {
             // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
             // and then trigger the original listener.
             if (type == "keydown") {
@@ -54,10 +56,6 @@ $(document).ready(function () {
         }
 
         input.addEventListener = addEventListenerWrapper;
-        input.attachEvent = addEventListenerWrapper;
-
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-    })(pac_input);
+    }
 
 });
