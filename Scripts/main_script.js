@@ -11,8 +11,8 @@ function mod(n, m) {
     return ((n % m) + m) % m;
 }
 $(document).ready(function () {
-    var autocomplete;
-    autocomplete = new google.maps.places.Autocomplete((document.getElementById('location')), {
+    var pac_input = document.getElementById('location');
+    var autocomplete = new google.maps.places.Autocomplete(pac_input, {
         types: ['geocode']
     });
 
@@ -26,4 +26,38 @@ $(document).ready(function () {
         var local_mins = mod(local_time_min, 60);
         alert("Local Time: " + local_hours + ":" + local_mins);
     });
+
+    (function pacSelectFirst(input) {
+        // store the original event binding function
+        var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+
+        function addEventListenerWrapper(type, listener) {
+            // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+            // and then trigger the original listener.
+            if (type == "keydown") {
+                var orig_listener = listener;
+                listener = function (event) {
+                    var suggestion_selected = $(".pac-item-selected").length > 0;
+                    if (event.which == 13 && !suggestion_selected) {
+                        var simulated_downarrow = $.Event("keydown", {
+                            keyCode: 40,
+                            which: 40
+                        });
+                        orig_listener.apply(input, [simulated_downarrow]);
+                    }
+
+                    orig_listener.apply(input, [event]);
+                };
+            }
+
+            _addEventListener.apply(input, [type, listener]);
+        }
+
+        input.addEventListener = addEventListenerWrapper;
+        input.attachEvent = addEventListenerWrapper;
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+    })(pac_input);
+
 });

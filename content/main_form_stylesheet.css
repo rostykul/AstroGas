@@ -25,7 +25,7 @@ html, input{
             float: left;
             display: block;
             font-size: 23px;
-            margin-top: calc((var(--navheight) - 23px)*0.5);
+            margin-top: calc((var(--navheight) - 23px)*0.5 - 2px);
         }
 
         #nav_bar .lang_select {
@@ -37,7 +37,7 @@ html, input{
             height: 25px;
             border: 5px solid #fff;
             width: 40px;
-            margin: calc((var(--navheight) - 25px)*0.5 - 5px) calc((var(--navheight) - 25px)*0.5) 0 0;
+            margin: calc((var(--navheight) - 25px)*0.5 - 5px) 0 0 0;
             border-radius: 7px;
             overflow: hidden;
             transition: all 0.1s ease;
@@ -59,33 +59,28 @@ html, input{
             cursor: pointer;
         }
 
-#nav_bar .login_button {
-    float: right;
-    display: block;
-    font-weight: bold;
-    font-size: 23px;
-    background-color: #00E152;
-    padding: calc((var(--navheight) - 23px)*0.5);
-    padding-left: 2em;
-    padding-right: 2em;
-    text-align: center;
-    transition: background-color 0.1s ease, color 0.1s ease, padding-right 0.1s ease, padding-left 0.1s ease;
-    user-select: none;
-    cursor: pointer;
-}
+        #nav_bar .login_button {
+            float: right;
+            color: black;
+            display: block;
+            font-size: 23px;
+            background-color: #fff;
+            margin: calc((var(--navheight) - 51px)*0.5 - 2px) 30px 0 25px;
+            padding: 12px;
+            border: 2px black solid;
+            border-radius: 7px;
+            padding-left: 23px;
+            padding-right: 23px;
+            text-align: center;
+            transition: background-color 0.25s ease;
+            user-select: none;
+            cursor: pointer;
+        }
 
-#nav_bar .login_button:hover {
-    background-color: #00A539;
-    color: #fff;
-    padding-left: 2.25em;
-    padding-right: 2.25em;
-}
-#nav_bar .login_button:active {
-    background-color: #00A539;
-    color: #fff;
-    padding-left: 1.9em;
-    padding-right: 1.9em;
-}
+            #nav_bar .login_button:hover {
+                background-color: #000000;
+                color: white;
+            }
 
 #star_back {
     display: flex;
@@ -132,7 +127,7 @@ html, input{
     content: "";
     background-color: #fff;
     height: 2em;
-    width: 100vw;
+    width: 60vw;
     transform: translateX(calc(50vw - 0.5em)) skew(-45deg);
     position: absolute;
     top: -1.9em;
@@ -142,7 +137,7 @@ html, input{
     content: "";
     background-color: #fff;
     height: 2em;
-    width: 100vw;
+    width: 60vw;
     transform: translateX(calc(-50vw + 0.5em)) skew(45deg);
     position: absolute;
     top: -1.9em;
@@ -216,11 +211,11 @@ input[id="location"]:focus, input[id="location"]:not(:placeholder-shown) {
     border-color: black;
 }
 
-@media (max-width: 720px) {
+/*@media (max-width: 720px) {
     #nav_bar {
         --navheight: 70px;
     }
-}
+}*/
 
 #footer{
     display:flex;
