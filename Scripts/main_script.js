@@ -19,8 +19,8 @@ $(document).ready(function () {
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var near_place = autocomplete.getPlace();
-        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
-        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+        document.getElementById('latitude_view').textContent = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').textContent = near_place.geometry.location.lng();
         var time = new Date();
         var local_time_min = mod((time.getUTCHours() * 60 + time.getUTCMinutes() + near_place.utc_offset_minutes), 1440);
         var local_hours = Math.floor(local_time_min / 60);
@@ -57,5 +57,11 @@ $(document).ready(function () {
 
         input.addEventListener = addEventListenerWrapper;
     }
-
+    var lang_buttons = [document.getElementById("second_lang")
+                    , document.getElementById("cur_lang")];
+    lang_buttons[0].addEventListener("click", () => {
+        var last_src = lang_buttons[0].src;
+        lang_buttons[0].src = lang_buttons[1].src;
+        lang_buttons[1].src = last_src;
+    });
 });

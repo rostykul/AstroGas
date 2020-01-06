@@ -18,10 +18,12 @@
     <div id="nav_bar">
         <div class="login_button">Log in</div>
         <div class="lang_select">
-            <img id="us" class="lang_button" src="Pictures/US.png">
-            <img id="ru" class="lang_button" src="Pictures/RU.png">
+            <img id="cur_lang" class="lang_button" src="Pictures/US.png">
+            <img id="second_lang" class="lang_button" src="Pictures/RU.png">
         </div>
-        <img src="Pictures/AstroGasIcon.svg" />
+        <a href="https://rostykul.github.io/AstroGas/">
+            <img src="Pictures/AstroGasIcon.svg" href="https://rostykul.github.io/AstroGas/" />
+        </a>
         <p class="astro_title">astrogas.info</p>
 
     </div>
@@ -35,12 +37,18 @@
 
     <!--Main Content-->
     <div id="content">
-        <div id="sample">
-            <form action="" method="" onSubmit="return false;">
-                <input type="text" id="location" class="in_row" placeholder=" ">
-                <label for="location" class="in_row">Location</label>
-                <div class="in_row">latitude: <span id="latitude_view"></span> <br/>longitude:<span id="longitude_view"></span></div>
-            </form>
+        <div id="loc_container">
+            <div id="loc_title"><p>Location Properties</p></div>
+            <div id="loc_form">
+                <form action="" method="" onSubmit="return false;">
+                    <input type="text" id="location" class="in_row" placeholder=" ">
+                    <label for="location" class="in_row">Location</label>
+                    <!--<div class="in_row">s</div>-->
+                    <input type="text" id="time" class="in_row" placeholder=" ">
+                    <label for="time" class="in_row">Time</label>
+                    <div class="in_row">latitude: <span id="latitude_view"></span> <br />longitude:<span id="longitude_view"></span></div>
+                </form>
+            </div>
         </div>
     </div>
 
