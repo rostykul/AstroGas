@@ -5,7 +5,21 @@ window.addEventListener("scroll", () => {
     //alert("value: " + window.pageYOffset);
 });
 //scroll_el.style.setProperty("margin", "50px");
+var time_input = document.getElementById("time");
+var loc_result = document.getElementById("loc_result");
 
+time_input.addEventListener("input", () => {
+    if (time_input.value == "2019") {
+        loc_result.style.setProperty("display", "grid");
+    }else {
+        loc_result.style.setProperty("display", "none");
+    }
+    //alert("value: " + window.pageYOffset);
+});
+// time_input.addEventListener("blur", () => {
+//     loc_result.style.setProperty("display", "none");
+//     //alert("value: " + window.pageYOffset);
+// });
 //AutoFill Google Script
 function mod(n, m) {
     return ((n % m) + m) % m;
@@ -19,8 +33,8 @@ $(document).ready(function () {
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var near_place = autocomplete.getPlace();
-        document.getElementById('latitude_view').textContent = near_place.geometry.location.lat();
-        document.getElementById('longitude_view').textContent = near_place.geometry.location.lng();
+        // document.getElementById('latitude_view').textContent = near_place.geometry.location.lat();
+        // document.getElementById('longitude_view').textContent = near_place.geometry.location.lng();
         var time = new Date();
         var local_time_min = mod((time.getUTCHours() * 60 + time.getUTCMinutes() + near_place.utc_offset_minutes), 1440);
         var local_hours = Math.floor(local_time_min / 60);
