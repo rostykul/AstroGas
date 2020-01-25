@@ -70,7 +70,8 @@ function call_my_info(my_date){
     .then(result => {
         console.log(result);
         setResult(result);
-    });
+    })
+    .catch(err=>console.error(err));
 }
 // time_input.addEventListener("blur", () => {
 //     loc_result.style.setProperty("display", "none");
