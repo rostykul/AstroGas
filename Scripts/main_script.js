@@ -65,7 +65,7 @@ function call_my_info(my_date){
     redirect: 'follow'
     };
 
-    fetch("http://localhost:3000/api/my_info", requestOptions)
+    fetch("http://192.168.26.19:3000/api/my_info", requestOptions)
     .then(response => response.json())
     .then(result => {
         console.log(result);
