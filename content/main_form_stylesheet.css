@@ -64,25 +64,30 @@ html, input {
 
 #nav_bar .login_button {
     float: right;
-    color: black;
+    color: white;
     display: block;
     font-size: 23px;
-    background-color: #fff;
-    margin: calc((var(--navheight) - 51px)*0.5 - 2px) 30px 0 25px;
-    padding: 12px;
-    border: 2px black solid;
-    border-radius: 7px;
-    padding-left: 23px;
-    padding-right: 23px;
+    background-color: #1bbb9e;
+    /* margin: calc((var(--navheight) - 51px)*0.5 - 2px) 0px 0 25px; */
+    margin-left: 25px;
+    /* padding: 12px; */
+    /* border: 2px #1abb4b solid; */
+    /* border-radius: 7px; */
+    /* padding-left: 23px; */
+    /* padding-right: 23px; */
     text-align: center;
     transition: background-color 0.25s ease;
     user-select: none;
     cursor: pointer;
-    width: 75px;
+    width: 155px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #nav_bar .login_button:hover {
-    background-color: #000000;
+    background-color: #22927e;
     color: white;
 }
 
@@ -96,8 +101,27 @@ html, input {
     background-image: url(../Pictures/space.png);
     background-repeat: repeat;
     background-size: 100%;
-    height: 448px;
+    height: 500px;
     background-position-y: calc(var(--scroll)*0.5*1px), 0px;
+    text-shadow: 0px 0px 50px rgba(255,255,255,0.5);
+    animation: star_start 3s ease forwards;
+}
+
+#star_back img{
+    width: 160px;
+    margin-top: -70px;
+}
+
+@keyframes star_start{
+    0%{
+        text-shadow: 0px 0px 30px rgba(255,255,255,0.15);
+    }
+    20%{
+        text-shadow: 0px 0px 50px rgba(255,255,255,0.4);
+    }
+    100%{
+        text-shadow: 0px 0px 10px rgba(255,255,255,0);
+    }
 }
 
 #star_back::after {
@@ -138,22 +162,22 @@ html, input {
 }
 
 #star_back div {
-    background: linear-gradient(to right, rgba(255,255,255,0), #fff, rgba(255,255,255,0));
-    height: 0.15em;
+    background: white;
+    height: 2px;
     margin: 0.8em;
-    width: 32vw;
-    animation: start_up 0.5s ease;
+    width: 22vw;
+    /* animation: start_up 0.5s ease; */
 }
 
-@keyframes start_up {
+/* @keyframes start_up {
     0% {
-        width: 18vw;
+        width: 100vw;
     }
 
     100% {
-        width: 32vw;
+        width: 22vw;
     }
-}
+} */
 
 #content:before {
     content: "";
@@ -182,7 +206,6 @@ html, input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
     padding: 30px 50px 50px 50px;
     height: auto;
 }
@@ -194,11 +217,11 @@ html, body {
 
 
 #loc_container {
-    background-color: white;
-    box-shadow: #a7a7a7 0px 0px 20px 0px;
-    overflow: hidden;
+    /* background-color: white; */
+    /* box-shadow: #a7a7a7 0px 0px 20px 0px; */
+    /* overflow: hidden; */
     width: 100%;
-    height: 1050px;
+    height: 1500px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -207,22 +230,44 @@ html, body {
 
 #loc_title {
     color: white;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px; 
-    width: 100%;
-}
-
-#loc_title p {
-    background-color: gray;
-    height: 43px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* height: 300px; */
+    /* width: 100%; */
+    background-color: #ef7033;
+    position: relative;
+    height: 44px;
     text-align: center;
     width: 60vw;
     max-width: 450px;
     line-height: 43px;
     border-radius: 40px;
+    border: 4px solid white;
+    margin-bottom: 130px;
+}
+#loc_title::before{
+    content: '';
+    position: absolute;
+    background: #ef703382;
+    width: 90vw;
+    max-width: 1200px;
+    height: 2px;
+    top: 21px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+#loc_title p {
+    /* background-color: gray; */
+    /* height: 43px; */
+    /* text-align: center; */
+    /* width: 60vw; */
+    /* max-width: 450px; */
+    /* line-height: 43px; */
+    /* border-radius: 40px; */
 }
 
 #loc_form {
@@ -235,50 +280,60 @@ html, body {
     justify-content: start;
     flex-direction: column;
 }
-
+@keyframes result_start {
+    0%{
+        height: 0px;
+        padding: 0px 50px 0px 50px;
+    }
+    100%{
+        height: var(--result_height);
+        padding: 50px;
+    }
+}
 #loc_result{
+    --result_height: 500px;
     color: white;
     width: 60vw;
     max-width: 900px;
-    height: 400px;
+    height: var(--result_height);
     background: url(../Pictures/space.png);
     background-size: 300%;
-    border-radius: 10px;
     box-shadow: 0px 0px 30px inset rgb(0, 0, 0), 0px 0px 72px inset rgb(0, 0, 0);
     display: none;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 28px;
-    box-sizing: border-box;
-    padding: 50px 0px 50px 0px;
+    /* grid-column-gap: 28px; */
+    padding: 50px;
+    /* box-sizing: border-box; */
     align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
     overflow: hidden;
     animation: result_start 0.5s ease forwards;
 }
 
-@keyframes result_start {
-    0%{
-        height: 0px;
-        padding: 0px;
-    }
-    100%{
-        height: 400px;
-        padding: 50px 0px 50px 0px;
-    }
+#loc_result div{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
 }
-#loc_result *{
+#loc_result div p{
     /* text-align: center; */
-    background-color: rgba(255, 255, 255, 0.05);
     /* box-shadow: 0px 0px 15px inset rgba(142, 122, 255, 0.2); */
     padding: 18px;
-    font-style: italic;
-    /* font-style: italic; */
-    border-radius: 100px 0px 0px 100px;
 }
+
 #loc_result .result_col1{
+    background-color: rgba(255, 255, 255, 0.05);
     text-align: right;
     font-style: initial;
-    border-radius: 0px 100px 100px 0px;
 }
+
+#loc_result .result_col2{
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
 /*
 #loc_result *:nth-child(2n){
     background-color: darkgreen;
@@ -304,7 +359,7 @@ form {
 input[type= "text"] {
     background-color: transparent;
     border: 0;
-    border-bottom: solid 3px gray;
+    border-bottom: solid 2px gray;
     color: black;
     outline: none;
     width: 60vw;
@@ -359,6 +414,7 @@ input[id="time"]:focus, input[id="time"]:not(:placeholder-shown) {
     align-items: center;
     justify-content: center;
     height: 70px;
+    background: #dedede;
 }
 
 #footer a {
